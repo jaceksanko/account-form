@@ -1,5 +1,6 @@
 import './App.scss';
 import React from "react";
+import AccountPersonal from "./components/AccountPersonal"
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
           Hello world
         </p>
       </header>
+      <AccountPersonal/>
     </div>
   );
 }

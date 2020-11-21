@@ -9,5 +9,31 @@
     width: 292px;
     height: 505px;
     margin-right: 0;
+    .AccountPersonal-aside {
+      display: none;
+    }
+  }
+  .AccountPersonal-aside {
+    width: 256px;
+    height: 100%;
+    background-color: $color-aside-background;
+    background-image: url("../assets/images/layer_1.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-origin: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    @media (max-width: 991px) {
+      display: none;
+    }
+    .AccountPersonal-aside__lines {
+      width: 244px;
+      height: 374px;
+      background-image: url("../assets/images/lines_2.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-origin: border-box;
+    }
   }
 }

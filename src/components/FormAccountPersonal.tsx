@@ -4,9 +4,9 @@ import ButtonForm from "./ButtonForm";
 
 function FormAccountPersonal() {
     return (
-        <div className="FormAccountPersonal">
+        <article className="FormAccountPersonal">
             <ButtonForm/>
-        </div>
+        </article>
     );
 }
 

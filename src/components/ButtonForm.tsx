@@ -1,5 +1,5 @@
 import React from "react";
-import "./ButtonForm.scss.scss";
+import "./ButtonForm.scss";
 
 function ButtonForm() {
     return (

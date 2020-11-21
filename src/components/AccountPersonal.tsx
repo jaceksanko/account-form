@@ -1,16 +1,15 @@
 import React from "react";
 import "./AccountPersonal.scss";
+import FormAccountPersonal from "./FormAccountPersonal"
 
 function AccountPersonal() {
     return (
-        <div className="AccountPersonal">
-            <header className="AccountPersonal-header">
-                <p>
-                    Hello world
-                </p>
-            </header>
-
-        </div>
+        <section className="AccountPersonal">
+            <aside className="AccountPersonal-aside">
+                <div className="AccountPersonal-aside__lines"></div>
+            </aside>
+            <FormAccountPersonal/>
+        </section>
     );
 }
 

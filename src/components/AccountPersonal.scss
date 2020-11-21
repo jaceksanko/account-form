@@ -1,0 +1,13 @@
+@import '../scss/settings';
+
+.AccountPersonal {
+  width: 728px;
+  height: 552px;
+  background-color: white;
+  margin-right: 20%;
+  @media (max-width: 991px) {
+    width: 292px;
+    height: 505px;
+    margin-right: 0;
+  }
+}

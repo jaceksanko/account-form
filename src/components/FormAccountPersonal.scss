@@ -4,6 +4,8 @@
   position: relative;
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
   .FormAccountPersonal-line-top {
     position: absolute;
     width: 70px;
@@ -44,6 +46,275 @@
     }
     @media (max-width: 991px) {
       display: none;
+    }
+  }
+  .FormAccountPersonal-form-container {
+    max-width: 370px;
+    @media (max-width: 991px) {
+      max-width: 260px;
+    }
+    .FormAccountPersonal-header {
+      max-width: 322px;
+      padding: 42px 0 45px 0;
+      @media (max-width: 991px) {
+        max-width: 264px;
+        padding: 16px 0 30px 0;
+      }
+      .FormAccountPersonal-header-text {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 0.28px;
+        margin: 0;
+      }
+    }
+    .FormAccountPersonal-form {
+      display: flex;
+      flex-direction: column;
+      .FormAccountPersonal-form__label {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 11px;
+        line-height: 28px;
+        display: flex;
+        flex-direction: column;
+        .FormAccountPersonal-form__label-text {
+          padding-left: 19px;
+        }
+      }
+      .FormAccountPersonal-form__input {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 16px;
+        padding: 12px 19px;
+      }
+      .FormAccountPersonal-form-name {
+        width: 370px;
+        @media (max-width: 991px) {
+          width: 260px;
+        }
+        .FormAccountPersonal-form-name__input {
+          border: none;
+          border-bottom: 2px solid $color-border-input;
+          padding-top: 0;
+          &:focus {
+            outline: none;
+            border-bottom: 2px solid $color-border-focus;
+          }
+        }
+      }
+      .FormAccountPersonal-form-phone {
+        padding-top: 25px;
+        .FormAccountPersonal-form-phone-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .FormAccountPersonal-form-phone__prefix-select {
+            position: relative;
+            &::after {
+              content: "";
+              position: absolute;
+              right: 14px;
+              top: 31%;
+              width: 8px;
+              height: 4px;
+              background-color: rgba($color-dropdown-arrow, 0.25);
+              clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+            }
+            .FormAccountPersonal-form-phone__prefix {
+              max-width: 114px;
+              padding-right: 10px;
+              padding-top: 0;
+              appearance: none;
+              background-color: transparent;
+              outline: none;
+              height: 100%;
+              border: none;
+              border-bottom: 2px solid $color-border-input;
+              &:focus {
+                outline: none;
+                border-bottom: 2px solid $color-border-focus;
+              }
+            }
+          }
+          .FormAccountPersonal-form-phone__number {
+            max-width: 237px;
+            padding-top: 0;
+            border: none;
+            border-bottom: 2px solid $color-border-input;
+            &:focus {
+              outline: none;
+              border-bottom: 2px solid $color-border-focus;
+            }
+            @media (max-width: 991px) {
+              max-width: 127px;
+            }
+          }
+        }
+      }
+      .FormAccountPersonal-form-chess {
+        padding-top: 25px;
+      }
+      .FormAccountPersonal-form-chess-container {
+        display: flex;
+        .FormAccountPersonal-form-chess-radio__yes {
+          margin-left: 12px;
+          z-index: 1;
+        }
+        .FormAccountPersonal-form-chess-radio__no {
+          margin-left: 25px;
+          z-index: 1;
+        }
+        .FormAccountPersonal-form-chess-radio {
+          width: 50px;
+          height: 50px;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          background-color: transparent;
+          .FormAccountPersonal-form-chess-radio__input {
+            &[type="radio" i] {
+              box-sizing: border-box;
+              appearance: none;
+              background: white;
+              outline: 2px solid $color-border-input;
+              border: 5px solid white;
+              width: 15px;
+              height: 15px;
+              margin: 0 5px;
+              &::after {
+                content: "";
+                position: absolute;
+                right: 13px;
+                top: 0;
+                width: 50px;
+                height: 50px;
+                border: 2px solid $color-border-input;
+                z-index: -1
+              }
+            }
+            &[type='radio']:checked {
+              outline: 2px solid $color-border-input-checked;
+              background: $color-border-input-checked;
+              &::after {
+                border: 2px solid $color-border-input-checked;
+              }
+            }
+            &[type="radio" i]:focus {
+              outline-offset: 0!important;
+            }
+          }
+          .FormAccountPersonal-form-chess-radio__text {
+            width: 28px;
+            margin-left: -8px;
+          }
+        }
+      }
+      .FormAccountPersonal-form-birth {
+        position: relative;
+        padding-top: 25px;
+        .FormAccountPersonal-form-birth-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .FormAccountPersonal-form-birth__separator {
+            width: 11px;
+            height: 2px;
+            background: $color-border-input;
+            @media (max-width: 991px) {
+              display: none;
+            }
+          }
+          .FormAccountPersonal-form__input {
+            border: 2px solid $color-border-input;
+            &:focus {
+              outline: 2px solid $color-border-focus;
+              border: 2px solid transparent;
+            }
+
+          }
+          .FormAccountPersonal-form-birth__day {
+            width: 50px;
+            height: 50px;
+
+          }
+          .FormAccountPersonal-form-birth__month-select {
+            position: relative;
+            &::after {
+              content: "";
+              position: absolute;
+              right: 14px;
+              top: 45%;
+              width: 8px;
+              height: 4px;
+              background-color: rgba($color-dropdown-arrow, 0.25);
+              clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+              @media (max-width: 991px) {
+                right: 7px;
+              }
+            }
+            .FormAccountPersonal-form-birth__month {
+              width: 134px;
+              height: 50px;
+              appearance: none;
+              background-color: transparent;
+              @media (max-width: 991px) {
+                width: 50px;
+              }
+            }
+          }
+          .FormAccountPersonal-form-birth__year {
+            width: 144px;
+            height: 50px;
+          }
+        }
+      }
+
+      .FormAccountPersonal-form-submit-button {
+        position: absolute;
+        width: 237px;
+        height: 51px;
+        border: none;
+        right: -50px;
+        bottom: -25px;
+        background: linear-gradient(90deg, $color-button-submit-background-first -0.42%,
+                $color-button-submit-background-second 100.42%);
+        box-shadow: 0 20px 25px $color-button-submit-box-shadow-big;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 28px;
+        letter-spacing: 0.48px;
+        text-transform: uppercase;
+        color: $color-button-submit-text;
+        &:focus {
+          outline: 2px solid $color-border-focus;
+        }
+        .FormAccountPersonal-form-submit-button__text {
+            margin-right: 60px;
+        }
+        .FormAccountPersonal-form-submit-button__arrow-box {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 50px;
+          height: 50px;
+          background: #7841F4 ;
+          box-shadow: 0 23px 24px $color-button-submit-box-shadow-small;
+          .FormAccountPersonal-form-submit-button__arrow {
+            position: absolute;
+            top: 25%;
+            right: 25%;
+            background:  url("../assets/images/arrow-right-thin.svg");
+            width: 25px;
+            height: 25px;
+            z-index: 2;
+          }
+        }
+      }
     }
   }
 }

@@ -293,6 +293,9 @@
         &:focus {
           outline: 2px solid $color-border-focus;
         }
+        @media (max-width: 991px) {
+          right: 26px;
+        }
         .FormAccountPersonal-form-submit-button__text {
             margin-right: 60px;
         }

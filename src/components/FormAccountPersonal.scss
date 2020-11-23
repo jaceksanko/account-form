@@ -1,5 +1,23 @@
 @import '../scss/settings';
 
+.errorInput {
+  color: $color-error!important;
+  border-bottom: 2px solid $color-error!important;
+}
+.errorMessage {
+  color: $color-error;
+  position: absolute;
+  bottom: -26px;
+}
+.errorInputBox {
+  color: $color-error!important;
+  border: 2px solid $color-error!important;
+}
+.errorMessageBirth {
+  color: $color-error;
+  padding-right: 10px;
+}
+
 .FormAccountPersonal {
   position: relative;
   height: 100%;
@@ -79,6 +97,7 @@
         line-height: 28px;
         display: flex;
         flex-direction: column;
+        position: relative;
         .FormAccountPersonal-form__label-text {
           padding-left: 19px;
         }
@@ -140,16 +159,25 @@
             }
           }
           .FormAccountPersonal-form-phone__number {
-            max-width: 237px;
+            width: 237px;
             padding-top: 0;
             border: none;
             border-bottom: 2px solid $color-border-input;
+            &::-webkit-outer-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+            &::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+            -moz-appearance: textfield;
             &:focus {
               outline: none;
               border-bottom: 2px solid $color-border-focus;
             }
             @media (max-width: 991px) {
-              max-width: 127px;
+              width: 127px;
             }
           }
         }
@@ -235,12 +263,13 @@
               outline: 2px solid $color-border-focus;
               border: 2px solid transparent;
             }
-
           }
           .FormAccountPersonal-form-birth__day {
             width: 50px;
             height: 50px;
-
+            padding-left: 0;
+            padding-right: 0;
+            text-align: center;
           }
           .FormAccountPersonal-form-birth__month-select {
             position: relative;
@@ -264,6 +293,9 @@
               background-color: transparent;
               @media (max-width: 991px) {
                 width: 50px;
+                padding-right: 0;
+                padding-left: 10px;
+                text-align: center;
               }
             }
           }

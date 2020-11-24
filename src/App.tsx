@@ -1,6 +1,13 @@
 import './App.scss';
 import React from "react";
-import AccountPersonal from "./components/AccountPersonal"
+import {
+    Switch,
+    Route
+} from "react-router-dom";
+
+import AccountPersonal from "./components/AccountPersonal";
+import AccountBasic from "./components/AccountBasic"
+import AccountDetails from "./components/AccountDetails"
 
 function App() {
   return (
@@ -8,7 +15,18 @@ function App() {
       <header className="App-header">
           <h1 className="App-header-title">Your account</h1>
       </header>
-      <AccountPersonal/>
+            <Switch>
+                <Route path="/basic">
+                    <AccountBasic/>
+                </Route>
+                <Route path="/details">
+                    <AccountDetails/>
+                </Route>
+                <Route path="/">
+                    <AccountPersonal/>
+                </Route>
+
+            </Switch>
     </div>
   );
 }

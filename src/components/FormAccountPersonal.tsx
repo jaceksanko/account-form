@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import { useHistory } from "react-router-dom";
+
 import LinesRegistrationSteps from "./LinesRegistrationSteps"
 import "./FormAccountPersonal.scss";
 import {months, countryCodes} from "../assets/assets"
@@ -37,6 +39,7 @@ function FormAccountPersonal() {
 
     const { width } = useWindowDimensions();
     const currentYear = new Date().getFullYear();
+    let history = useHistory();
 
     const birthError = () => {
         switch (true) {
@@ -57,23 +60,37 @@ function FormAccountPersonal() {
 
 
     const validate = () => {
-        if (name === "" || name.length < 3)  setValidationInputName({
-            isError: true,
-            textError: "Names should have a minimum 3 characters"
-        });
-        if (phoneNumber === "" || phoneNumber.length < 9)   setValidationInputPhoneNumber({
-            isError: true,
-            textError: "Number should have 9 digits"
-        });
-        if (birthDay === "")  setValidationInputBirthDay({
-            isError: true,
-            textError: "Birth day should have a number"
-        });
-        if (birthYear === "")  setValidationInputBirthYear({
-            isError: true,
-            textError: "Birth year should have a number"
-        });
+        let isValidate = true;
+        if (name === "" || name.length < 3) {
+            isValidate = false;
+            setValidationInputName({
+                isError: true,
+                textError: "Names should have a minimum 3 characters"
+            })
+        }
+        if (phoneNumber === "" || phoneNumber.length < 9) {
+            isValidate = false;
+            setValidationInputPhoneNumber({
+                isError: true,
+                textError: "Number should have 9 digits"
+            });
+        }
+        if (birthDay === "") {
+            isValidate = false;
+            setValidationInputBirthDay({
+                isError: true,
+                textError: "Birth day should have a number"
+            });
+        }
+        if (birthYear === "") {
+            isValidate = false;
+            setValidationInputBirthYear({
+                isError: true,
+                textError: "Birth year should have a number"
+            });
+        }
         if (!validDate(Number(birthDay), birthMonth, Number(birthYear))) {
+            isValidate = false;
             setValidationInputBirthYear({
                 isError: true,
                 textError: "Data does not exist"
@@ -91,6 +108,7 @@ function FormAccountPersonal() {
             let eighteenYearsBack = new Date((presentDate.getFullYear() - 18), presentDate.getMonth(), presentDate.getDate());
             let fromInput= new Date(`${Number(birthYear)}/${birthMonth}/${Number(birthDay)}`);
             if (eighteenYearsBack < fromInput) {
+                isValidate = false;
                 setValidationInputBirthYear({
                     isError: true,
                     textError: "You are under 18"
@@ -105,10 +123,16 @@ function FormAccountPersonal() {
                 })
             }
         }
+        return isValidate
     }
 
+
     const handleSubmit = (e:React.SyntheticEvent) => {
-        validate();
+        let isValidate = validate()
+        if (isValidate) {
+            //some fetch data
+            history.push("/details");
+        }
         e.preventDefault();
     }
 

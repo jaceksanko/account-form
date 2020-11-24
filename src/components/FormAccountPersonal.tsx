@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import LinesRegistrationSteps from "./LinesRegistrationSteps"
 import "./FormAccountPersonal.scss";
 import {months, countryCodes} from "../assets/assets"
 import useWindowDimensions from "../hooks/windowDimensions";
@@ -114,19 +115,7 @@ function FormAccountPersonal() {
 
     return (
         <article className="FormAccountPersonal">
-            <aside>
-                <span className="FormAccountPersonal-line-top"></span>
-                <span className="FormAccountPersonal-line-right FormAccountPersonal-line-right__first">
-                <div className="FormAccountPersonal-line-right-text FormAccountPersonal-line-right-text-number">01</div>
-            </span>
-                <span className="FormAccountPersonal-line-right FormAccountPersonal-line-right__second">
-                <div className="FormAccountPersonal-line-right-text FormAccountPersonal-line-right-text-number">02</div>
-                <div className="FormAccountPersonal-line-right-text">Personal</div>
-            </span>
-                <span className="FormAccountPersonal-line-right FormAccountPersonal-line-right__third">
-                <div className="FormAccountPersonal-line-right-text FormAccountPersonal-line-right-text-number">03</div>
-            </span>
-            </aside>
+            <LinesRegistrationSteps step2={true}/>
             <section className="FormAccountPersonal-form-container">
                 <header className="FormAccountPersonal-header">
                     <h2 className="FormAccountPersonal-header-text">Provide personal information so that we can create a new account for you.</h2>

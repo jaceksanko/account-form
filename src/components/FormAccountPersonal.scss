@@ -24,48 +24,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  .FormAccountPersonal-line-top {
-    position: absolute;
-    width: 70px;
-    height: 2px;
-    left: 51px;
-    top: -2px;
-    background: $color-line-active;
-  }
-  .FormAccountPersonal-line-right {
-    position: absolute;
-    right: -25px;
-    width: 25px;
-    height: 2px;
-    background: rgba($color-line-inactive, 0.25);
-    mix-blend-mode: normal;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 11px;
-    line-height: 11px;
-    letter-spacing: 0.22px;
-    &.FormAccountPersonal-line-right__first {
-      top: 109px;
-    }
-    &.FormAccountPersonal-line-right__second {
-      top: 196px;
-      background: $color-line-active;
-      opacity: 1;
-    }
-    &.FormAccountPersonal-line-right__third {
-      top: 274px;
-    }
-    .FormAccountPersonal-line-right-text {
-      color: $color-header;
-      padding-left: 8px;
-      &.FormAccountPersonal-line-right-text-number {
-        padding-top: 8px;
-      }
-    }
-    @media (max-width: 991px) {
-      display: none;
-    }
-  }
+
   .FormAccountPersonal-form-container {
     max-width: 370px;
     @media (max-width: 991px) {

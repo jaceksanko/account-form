@@ -1,0 +1,48 @@
+@import '../scss/settings';
+
+.LinesRegistrationSteps {
+  .LinesRegistrationSteps-line-top {
+    position: absolute;
+    width: 70px;
+    height: 2px;
+    left: 51px;
+    top: -2px;
+    background: $color-line-active;
+  }
+  .LinesRegistrationSteps-line-right {
+    position: absolute;
+    right: -25px;
+    width: 25px;
+    height: 2px;
+    background: rgba($color-line-inactive, 0.25);
+    mix-blend-mode: normal;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 11px;
+    letter-spacing: 0.22px;
+    &.active-line {
+      background: $color-line-active;
+    }
+    &.LinesRegistrationSteps-line-right__first {
+      top: 109px;
+    }
+    &.LinesRegistrationSteps-line-right__second {
+      top: 196px;
+      opacity: 1;
+    }
+    &.LinesRegistrationSteps-line-right__third {
+      top: 274px;
+    }
+    .LinesRegistrationSteps-line-right-text {
+      color: $color-header;
+      padding-left: 8px;
+      &.LinesRegistrationSteps-line-right-text-number {
+        padding-top: 8px;
+      }
+    }
+    @media (max-width: 991px) {
+      display: none;
+    }
+  }
+}
